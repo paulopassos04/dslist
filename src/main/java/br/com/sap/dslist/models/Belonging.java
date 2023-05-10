@@ -11,22 +11,23 @@ public class Belonging {
 
 	@EmbeddedId
 	private BelongingPK id = new BelongingPK();
+
 	private Integer position;
-	
-	public Belonging() {}
 
-	public Belonging(Game game, GameList gameList, Integer position) {
+	public void setGame(Game game) {
 		id.setGame(game);
-		id.setGameList(gameList);
-		this.position = position;
 	}
 
-	public BelongingPK getId() {
-		return id;
+	public Game getGame() {
+		return id.getGame();
 	}
 
-	public void setId(BelongingPK id) {
-		this.id = id;
+	public void setList(GameList list) {
+		id.setGameList(list);
+	}
+
+	public GameList getList() {
+		return id.getGameList();
 	}
 
 	public Integer getPosition() {
